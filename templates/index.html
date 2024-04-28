@@ -1,0 +1,33 @@
+{% extends 'layout/base.html' %}
+{% block content %}
+
+<div class="container">
+    <h1>Cupcakes</h1>
+
+    <h2>List</h2>
+    <ul id="cupcake_list" class="list-group w-50 mx-auto"></ul>
+
+    <h2>Add cupcake</h2>
+    <form id="cupcake_form" class="w-50 mx-auto">
+        <div class="mb-3">
+            <label for="flavor" class="form-label">Flavor</label>
+            <input type="text" class="form-control" id="flavor" placeholder="Flavor" />
+        </div>
+        <div class="mb-3">
+            <label for="size" class="form-label">Size</label>
+            <input type="text" class="form-control" id="size" placeholder="Size" />
+        </div>
+        <div class="mb-3">
+            <label for="rating" class="form-label">Rating</label>
+            <input type="number" class="form-control" id="rating" min="1" max="5" placeholder="Rating" />
+        </div>
+        <div class="mb-3">
+            <label for="image" class="form-label">Image URL</label>
+            <input class="form-control" id="image" placeholder="Image URL" />
+        </div>
+        <button type="submit" class="btn btn-primary">Add!</button>
+    </form>
+    <div id="errors" class="list-group text-danger"></div>
+</div>
+
+{% endblock %}

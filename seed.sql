@@ -1,95 +1,136 @@
-DROP TABLE IF EXISTS pets;
-CREATE TABLE IF NOT EXISTS pets (
+DROP TABLE IF EXISTS cupcakes;
+CREATE TABLE IF NOT EXISTS cupcakes (
     id SERIAL NOT NULL,
-    name VARCHAR NOT NULL,
-    species VARCHAR NOT NULL,
-    photo_url VARCHAR,
-    age INTEGER,
-    notes VARCHAR,
-    available BOOLEAN NOT NULL,
-    PRIMARY KEY (id)
+    flavor VARCHAR NOT NULL,
+    size VARCHAR NOT NULL,
+    rating FLOAT NOT NULL,
+    image VARCHAR NOT NULL
 );
-INSERT INTO pets (name, species, photo_url, age, notes, available)
+INSERT INTO cupcakes (flavor, size, rating, image)
 VALUES (
-        'Max',
-        'Dog',
-        'https://example.com/max.jpg',
-        3,
-        'Friendly and playful',
-        true
+        'Chocolate',
+        'Small',
+        4.5,
+        'https://tinyurl.com/demo-cupcake'
     ),
     (
-        'Bella',
-        'Cat',
-        'https://example.com/bella.jpg',
-        2,
-        'Loves to cuddle',
-        true
+        'Vanilla',
+        'Medium',
+        4.2,
+        'https://tinyurl.com/demo-cupcake'
     ),
     (
-        'Charlie',
-        'Dog',
-        'https://example.com/charlie.jpg',
-        5,
-        'Well-behaved and trained',
-        true
+        'Strawberry',
+        'Large',
+        4.7,
+        'https://tinyurl.com/demo-cupcake'
     ),
     (
-        'Lucy',
-        'Dog',
-        'https://example.com/lucy.jpg',
-        1,
-        'Energetic and loves walks',
-        true
+        'Red Velvet',
+        'Small',
+        4.3,
+        'https://tinyurl.com/demo-cupcake'
     ),
     (
-        'Luna',
-        'Cat',
-        'https://example.com/luna.jpg',
-        4,
-        'Likes to explore',
-        true
+        'Lemon',
+        'Medium',
+        4.1,
+        'https://tinyurl.com/demo-cupcake'
     ),
     (
-        'Buddy',
-        'Dog',
-        'https://example.com/buddy.jpg',
-        6,
-        'Great with kids',
-        true
+        'Blueberry',
+        'Large',
+        4.6,
+        'https://tinyurl.com/demo-cupcake'
     ),
     (
-        'Daisy',
-        'Dog',
-        'https://example.com/daisy.jpg',
-        2,
-        'Enjoys playing fetch',
-        true
+        'Caramel',
+        'Small',
+        4.4,
+        'https://tinyurl.com/demo-cupcake'
     ),
     (
-        'Milo',
-        'Cat',
-        'https://example.com/milo.jpg',
-        3,
-        'Likes to nap in sunbeams',
-        true
+        'Pumpkin Spice',
+        'Medium',
+        4.2,
+        'https://tinyurl.com/demo-cupcake'
     ),
     (
-        'Bailey',
-        'Dog',
-        'https://example.com/bailey.jpg',
-        4,
-        'Gentle and affectionate',
-        true
+        'Cookies and Cream',
+        'Large',
+        4.8,
+        'https://tinyurl.com/demo-cupcake'
     ),
     (
-        'Sophie',
-        'Cat',
-        'https://example.com/sophie.jpg',
-        1,
-        'Curious and playful',
-        true
+        'Raspberry',
+        'Small',
+        4.6,
+        'https://tinyurl.com/demo-cupcake'
+    ),
+    (
+        'Mint Chocolate',
+        'Medium',
+        4.3,
+        'https://tinyurl.com/demo-cupcake'
+    ),
+    (
+        'Salted Caramel',
+        'Large',
+        4.7,
+        'https://tinyurl.com/demo-cupcake'
+    ),
+    (
+        'Coffee',
+        'Small',
+        4.5,
+        'https://tinyurl.com/demo-cupcake'
+    ),
+    (
+        'Coconut',
+        'Medium',
+        4.1,
+        'https://tinyurl.com/demo-cupcake'
+    ),
+    (
+        'Peanut Butter',
+        'Large',
+        4.9,
+        'https://tinyurl.com/demo-cupcake'
+    ),
+    (
+        'Almond',
+        'Small',
+        4.4,
+        'https://tinyurl.com/demo-cupcake'
+    ),
+    (
+        'Carrot',
+        'Medium',
+        4.0,
+        'https://tinyurl.com/demo-cupcake'
+    ),
+    (
+        'Pistachio',
+        'Large',
+        4.6,
+        'https://tinyurl.com/demo-cupcake'
+    ),
+    (
+        'Cherry',
+        'Small',
+        4.7,
+        'https://tinyurl.com/demo-cupcake'
+    ),
+    (
+        'Apple Cinnamon',
+        'Medium',
+        4.3,
+        'https://tinyurl.com/demo-cupcake'
     );
-UPDATE pets
-SET photo_url = 'https://ultra-pet.co.za/wp-content/uploads/2020/08/socialising.jpg'
-WHERE id > 0;
+SELECT setval(
+        ' cupcakes_id_seq ',
+        (
+            SELECT MAX(id)
+            FROM cupcakes
+        ) + 1
+    );
